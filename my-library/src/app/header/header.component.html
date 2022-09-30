@@ -1,0 +1,82 @@
+<div class="header">
+  <div class="nav">
+    <div class="left">
+      <img src="{{ logo }}" alt="" />
+      <button
+        style="background-color: white; border: none; cursor: pointer"
+        (click)="onSearch()"
+      >
+        <app-search></app-search>
+      </button>
+      <div class="explore" (click)="onExplore()">
+        <p>Explore</p>
+        <img src="{{ down }}" alt="" />
+      </div>
+
+      <p>My Library</p>
+    </div>
+    <div class="right" (click)="onLogout()">
+      <div class="avatar">
+        <h1 *ngIf="auth.user$ | async as user">
+          {{ user.name.charAt(0).toUpperCase() }}
+        </h1>
+      </div>
+      <img src="{{ down }}" alt="" />
+    </div>
+    <div class="logout" *ngIf="logout">
+      <button
+        mat-button
+        color="warn"
+        id="logout-button"
+        (click)="auth.logout({ returnTo: document.location.origin })"
+      >
+        Logout
+      </button>
+    </div>
+  </div>
+</div>
+<input
+  type="text"
+  id="search-bar"
+  placeholder="Search by title or author"
+  *ngIf="show"
+  (ngModelChange)="onChange($event)"
+  [ngModel]="search"
+/>
+
+<div class="dropdown" *ngIf="showDropdown">
+  <div class="headings">
+    <h3 class="heading">Explore by category</h3>
+    <h3 class="heading">See recently added titles</h3>
+    <h3 class="heading">See popular titles</h3>
+  </div>
+  <div class="options">
+    <mat-list role="list">
+      <mat-list-item
+        role="listitem"
+        class="list-item"
+        *ngFor="let item of firstRow"
+        ><img src="{{ item.icon }}" alt="{{ item.label }}" />
+        <p>{{ item.label }}</p></mat-list-item
+      >
+    </mat-list>
+    <mat-list role="list">
+      <mat-list-item
+        role="listitem"
+        class="list-item"
+        *ngFor="let item of secondRow"
+        ><img src="{{ item.icon }}" alt="{{ item.label }}" />
+        <p>{{ item.label }}</p></mat-list-item
+      >
+    </mat-list>
+    <mat-list role="list">
+      <mat-list-item
+        role="listitem"
+        class="list-item"
+        *ngFor="let item of thirdRow"
+        ><img src="{{ item.icon }}" alt="{{ item.label }}" />
+        <p>{{ item.label }}</p></mat-list-item
+      >
+    </mat-list>
+  </div>
+</div>

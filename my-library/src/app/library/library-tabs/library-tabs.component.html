@@ -1,0 +1,18 @@
+<mat-tab-group mat-align-tabs="start">
+  <mat-tab label="Currently Reading">
+    <div class="book-grid">
+      <app-book-card
+        *ngFor="let book of currentlyReading | search: searchString:'title'"
+        [book]="book"
+      ></app-book-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="Finished">
+    <div class="book-grid">
+      <app-book-card
+        *ngFor="let book of finished | search: searchString:'title'"
+        [book]="book"
+      ></app-book-card>
+    </div>
+  </mat-tab>
+</mat-tab-group>

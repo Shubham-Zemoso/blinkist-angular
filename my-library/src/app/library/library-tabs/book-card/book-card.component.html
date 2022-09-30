@@ -1,0 +1,39 @@
+<mat-card class="book-card">
+  <img mat-card-image src="{{ book.image }}" alt="{{ book.title }}" />
+  <mat-card-content>
+    <h3>{{ book.title }}</h3>
+    <p>{{ book.author }}</p>
+    <br />
+    <div class="info">
+      <div class="time">
+        <img src="{{ time }}" alt="" />
+        <p>{{ book.minutes }}</p>
+      </div>
+      <div class="reads">
+        <img src="{{ user }}" alt="" />
+        <p>{{ book.reads }}</p>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      *ngIf="!book.finished"
+      mat-button
+      class="btn"
+      color="primary"
+      (click)="onclick(book.id)"
+    >
+      Finished
+    </button>
+    <button
+      *ngIf="book.finished"
+      mat-button
+      class="btn"
+      color="primary"
+      (click)="onclick(book.id)"
+    >
+      Read Again
+    </button>
+    <mat-progress-bar value="{{book.finished? '100':'40'}}"></mat-progress-bar>
+  </mat-card-actions>
+</mat-card>

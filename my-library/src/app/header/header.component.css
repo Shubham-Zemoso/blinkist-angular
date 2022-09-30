@@ -1,0 +1,163 @@
+* {
+  font-family: 'Cera Pro';
+}
+
+.header {
+  width: 100%;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header p {
+  margin: 0;
+  color: #03314b;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+}
+
+.explore {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+.avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #69a6e3;
+  text-align: center;
+  color: white;
+}
+
+.avatar h1 {
+  margin-top: 2.5px;
+}
+
+#search-bar {
+  margin-left: 20%;
+  height: 47px;
+  width: 45%;
+  border: none;
+  border-bottom: 2px solid #6d787e;
+}
+
+input.ng-touched {
+  border: none;
+  border-bottom: 2px solid #6d787e;
+}
+
+input:placeholder-shown {
+  font-size: 24;
+  font-weight: 700;
+  color: #6d787e;
+}
+
+.logout {
+  position: absolute;
+  top: 7.5%;
+  left: 76%;
+  height: 48px;
+  width: 80px;
+  border: 1px solid blanchedalmond;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.explore {
+  cursor: pointer;
+}
+
+.explore p:hover {
+  color: #116BE9;
+}
+
+.explore img:hover {
+   stroke: #116BE9;
+}
+
+.dropdown {
+  width: 100%;
+  height: 398px;
+  background-color: #f1f6f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index:100;
+}
+
+.headings {
+  width: 60%;
+  height: 15%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #042330;
+}
+
+.headings h3 {
+  font-family: 'Cera Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #6D787E;
+  margin: 0;
+  margin-right: 18%;
+  cursor: pointer;
+}
+
+.headings h3:hover {
+  color: #116BE9;
+}
+
+.options {
+  width: 60%;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.7%;
+}
+
+.list-item {
+  cursor: pointer;
+}
+
+.list-item p {
+  color: #6D787E;
+  margin:0;
+  margin-left: 12px;
+}
+
+.list-item p:hover {
+  color: #116BE9;
+}

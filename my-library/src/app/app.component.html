@@ -1,0 +1,4 @@
+<app-login-page *ngIf="(auth.isAuthenticated$ | async) === false"></app-login-page>
+<app-header *ngIf="auth.isAuthenticated$ | async"></app-header>
+<app-library *ngIf="auth.isAuthenticated$ | async"></app-library>
+<app-footer *ngIf="auth.isAuthenticated$ | async"></app-footer>
